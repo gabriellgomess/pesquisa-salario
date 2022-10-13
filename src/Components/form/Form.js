@@ -9,15 +9,16 @@ import FormControl from '@mui/material/FormControl';
 import Autocomplete from '@mui/material/Autocomplete';
 import Slider from '@mui/material/Slider';
 import "./Form.css";
-import paises from './FormPaises.json';
-import linguagens from './Language.json';
-import estados from './Estados.json';
-import stacks from './Stacks.json';
-import { FormControlUnstyled } from '@mui/base';
+import paises from '../json/FormPaises.json';
+import linguagens from '../json/Language.json';
+import estados from '../json/Estados.json';
+import stacks from '../json/Stacks.json';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
+import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 
 
@@ -37,12 +38,12 @@ const Form = () => {
     const [currency, setCurrency] = useState();
 
     const handleFormatCurrency = (event) => {
-        var v = event.target.value.replace(/\D/g,"");
-        v = (v/100).toFixed(2) + "";
-        v = v.replace(".", ",");
-        v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
-        v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
-        event.target.value = v === "0,00" ? "" : "R$ "+v;
+        var valor = event.target.value.replace(/\D/g,"");
+        valor = (valor/100).toFixed(2) + "";
+        valor = valor.replace(".", ",");
+        valor = valor.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+        valor = valor.replace(/(\d)(\d{3}),/g, "$1.$2,");
+        event.target.value = valor === "0,00" ? "" : "R$ "+valor;
     }
     const handleExperience = (e) => {
         if(e.target.value <= "1"){
@@ -53,91 +54,110 @@ const Form = () => {
         setExperience(e.target.value+" anos ou +");
         }
     }
+
+    const { register, handleSubmit, reset,  errors } = useForm();
+    const onSubmit = data => {
+        axios.post('https://gabriellgomess.com/pesquisa/coleta.php', data)
+        .then(res => {
+            document.getElementsByClassName('form')[0].reset();            
+            console.log(res.data);
+            reset();
+        })
+    };
+ 
+
     return (
         <Card className='card' sx={{ width: 375 }}>
             <Typography variant='h5' className='title' color="text.secondary">
                 PESQUISA DE SALÁRIO
             </Typography>
             <CardContent>
-                <form>
+                <form className='form' onSubmit={handleSubmit(onSubmit)}>
                     <FormControl fullWidth>                    
                         <Autocomplete
                             className="input--form"
-                            id="combo-box-demo"
-                            options={stack}
+                            id="stack"
+                            name="stack"
+                            options={stack}                            
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Stack Tecnológico" />}
+                            renderInput={(params) => <TextField {...register("stack")} {...params} label="Stack Tecnológico" />}
                         />
                     </FormControl>
                     <FormControl>
-                    <FormLabel id="demo-row-radio-buttons-group-label">Gênero</FormLabel>
+                    <FormLabel id="label-genero">Gênero</FormLabel>
                     <RadioGroup
                         row
-                        aria-labelledby="demo-row-radio-buttons-group-label"
-                        name="row-radio-buttons-group"
+                        aria-labelledby="genero"
+                        name="genero"
                     >
-                        <FormControlLabel value="Masculino" control={<Radio />} label="Masculino" />
-                        <FormControlLabel value="Feminino" control={<Radio />} label="Feminino" />
-                        <FormControlLabel value="Outro" control={<Radio />} label="Outro" />
+                        <FormControlLabel name="genero" {...register('genero')} value="Masculino" control={<Radio />} label="Masculino" />
+                        <FormControlLabel name="genero" {...register('genero')} value="Feminino" control={<Radio />} label="Feminino" />
+                        <FormControlLabel name="genero" {...register('genero')} value="Outro" control={<Radio />} label="Outro" />
                     </RadioGroup>
                     </FormControl>
                     <Typography id="range-slider" color="text.secondary" gutterBottom>Tempo de Experiência ({experience})</Typography>
                     <Slider
                         label="Experiência"
                         aria-label="Experiência"
+                        name="experiencia"
                         defaultValue={1}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
                         min={1}
                         max={20}
+                        {...register('experiencia')}
                         onChange={(e)=>handleExperience(e)}
                     />
                     <FormControl>
-                    <FormLabel id="demo-row-radio-buttons-group-label">Senioridade</FormLabel>
+                    <FormLabel id="label--serioridade">Senioridade</FormLabel>
                     <RadioGroup
                         row
-                        aria-labelledby="demo-row-radio-buttons-group-label"
-                        name="row-radio-buttons-group"
+                        aria-labelledby="senioridade"
+                        name="senioridade"
                     >
-                        <FormControlLabel value="Junior" control={<Radio />} label="Junior" />
-                        <FormControlLabel value="Pleno" control={<Radio />} label="Pleno" />
-                        <FormControlLabel value="Senior" control={<Radio />} label="Sênior" />
+                        <FormControlLabel name='senioridade' {...register('senioridade')} value="Junior" control={<Radio />} label="Junior" />
+                        <FormControlLabel name='senioridade' {...register('senioridade')} value="Pleno" control={<Radio />} label="Pleno" />
+                        <FormControlLabel name='senioridade' {...register('senioridade')} value="Senior" control={<Radio />} label="Sênior" />
                     </RadioGroup>
-                    </FormControl>                 
-                    <TextField onKeyUp={(event)=>handleFormatCurrency(event)} className="input--form" id="outlined-basic" label="Salário" variant="outlined" />
+                    </FormControl>
+                    <TextField onKeyUp={(event)=>handleFormatCurrency(event)} name="salario" {...register("salario")} className="input--form" id="outlined-basic" label="Salário" variant="outlined" />                   
                     <FormControl fullWidth>                    
                         <Autocomplete
                             className="input--form"
-                            id="combo-box-demo"
+                            id="linguagem-principal"
+                            name="linguagem"                            
                             options={linguagem}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Linguagem principal" />}
+                            renderInput={(params) => <TextField {...register('linguagem')} {...params} label="Linguagem principal" />}
                         />
                     </FormControl>
                     <FormControl fullWidth>                    
                         <Autocomplete
                             className="input--form"
-                            id="combo-box-demo"
+                            id="pais"
+                            name="pais"                            
                             options={paises}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="País" />}
+                            renderInput={(params) => <TextField {...register('pais')} {...params} label="País" />}
                         />
                     </FormControl>
                     <FormControl fullWidth>                    
                         <Autocomplete
                             className="input--form"
-                            id="combo-box-demo"
+                            id="estado"
+                            name="estado"                            
                             options={estados}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...params} label="Estado" />}
+                            renderInput={(params) => <TextField {...register('estado')} {...params} label="Estado" />}
                         />
-                    </FormControl>                   
+                    </FormControl>
+                    <CardActions className='container--button'>
+                        <Button type="submit" variant="contained">Enviar</Button>
+                    </CardActions>               
                 </form>
             </CardContent>
-            <CardActions className='container--button'>
-                <Button variant="contained">Enviar</Button>
-            </CardActions>
+            
         </Card>          
     );
 }

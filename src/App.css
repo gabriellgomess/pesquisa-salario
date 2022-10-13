@@ -1,5 +1,6 @@
 .container--app{
   display: flex;
+  padding: 30px;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
