@@ -1,0 +1,242 @@
+[
+    {
+        "id": "1",
+        "label": "Javascript",
+        "value": "Javascript"
+    },
+    {
+        "id": "2",
+        "label": "PHP",
+        "value": "PHP"
+    },
+    {
+        "id": "3",
+        "label": "Python",
+        "value": "Python"
+    },
+    {
+        "id": "4",
+        "label": "Ruby",
+        "value": "Ruby"
+    },
+    {
+        "id": "5",
+        "label": "C#",
+        "value": "C#"
+    },
+    {
+        "id": "6",
+        "label": "C++",
+        "value": "C++"
+    },
+    {
+        "id": "7",
+        "label": "Java",
+        "value": "Java"
+    },
+    {
+        "id": "8",
+        "label": "C",
+        "value": "C"
+    },
+    {
+        "id": "9",
+        "label": "Objective-C",
+        "value": "Objective-C"
+    },
+    {
+        "id": "10",
+        "label": "Perl",
+        "value": "Perl"
+    },
+    {
+        "id": "11",
+        "label": "Scala",
+        "value": "Scala"
+    },
+    {
+        "id": "12",
+        "label": "Swift",
+        "value": "Swift"
+    },
+    {
+        "id": "13",
+        "label": "Go",
+        "value": "Go"
+    },
+    {
+        "id": "14",
+        "label": "R",
+        "value": "R"
+    },
+    {
+        "id": "15",
+        "label": "Groovy",
+        "value": "Groovy"
+    },
+    {
+        "id": "16",
+        "label": "Haskell",
+        "value": "Haskell"
+    },
+    {
+        "id": "17",
+        "label": "Clojure",
+        "value": "Clojure"
+    },
+    {
+        "id": "18",
+        "label": "Lua",
+        "value": "Lua"
+    },
+    {
+        "id": "19",
+        "label": "Matlab",
+        "value": "Matlab"
+    },
+    {
+        "id": "20",
+        "label": "Pascal",
+        "value": "Pascal"
+    },
+    {
+        "id": "21",
+        "label": "Rust",
+        "value": "Rust"
+    },
+    {
+        "id": "22",
+        "label": "Erlang",
+        "value": "Erlang"
+    },
+    {
+        "id": "23",
+        "label": "Elixir",
+        "value": "Elixir"
+    },
+    {
+        "id": "24",
+        "label": "Visual Basic",
+        "value": "Visual Basic"
+    },
+    {
+        "id": "25",
+        "label": "Delphi",
+        "value": "Delphi"
+    },
+    {
+        "id": "26",
+        "label": "COBOL",
+        "value": "COBOL"
+    },
+    {
+        "id": "27",
+        "label": "Assembly",
+        "value": "Assembly"
+    },
+    {
+        "id": "28",
+        "label": "Fortran",
+        "value": "Fortran"
+    },
+    {
+        "id": "29",
+        "label": "Lisp",
+        "value": "Lisp"
+    },
+    {
+        "id": "30",
+        "label": "Prolog",
+        "value": "Prolog"
+    },
+    {
+        "id": "31",
+        "label": "Ada",
+        "value": "Ada"
+    },
+    {
+        "id": "32",
+        "label": "F#",
+        "value": "F#"
+    },
+    {
+        "id": "33",
+        "label": "Dart",
+        "value": "Dart"
+    },
+    {
+        "id": "34",
+        "label": "Julia",
+        "value": "Julia"
+    },
+    {
+        "id": "35",
+        "label": "Eiffel",
+        "value": "Eiffel"
+    },
+    {
+        "id": "36",
+        "label": "Brainfuck",
+        "value": "Brainfuck"
+    },
+    {
+        "id": "37",
+        "label": "Lasso",
+        "value": "Lasso"
+    },
+    {
+        "id": "38",
+        "label": "Logo",
+        "value": "Logo"
+    },
+    {
+        "id": "39",
+        "label": "Smalltalk",
+        "value": "Smalltalk"
+    },
+    {
+        "id": "40",
+        "label": "Powershell",
+        "value": "Powershell"
+    },
+    {
+        "id": "41",
+        "label": "PL/SQL",
+        "value": "PL/SQL"
+    },
+    {
+        "id": "42",
+        "label": "RPG",
+        "value": "RPG"
+    },
+    {
+        "id": "43",
+        "label": "ABAP",
+        "value": "ABAP"
+    },
+    {
+        "id": "44",
+        "label": "Bash",
+        "value": "Bash"
+    },
+    {
+        "id": "45",
+        "label": "Kotlin",
+        "value": "Kotlin"
+    },
+    {
+        "id": "46",
+        "label": "Hack",
+        "value": "Hack"
+    },
+    {
+        "id": "47",
+        "label": "Scheme",
+        "value": "Scheme"
+    },
+    {
+        "id": "48",
+        "label": "Common Lisp",
+        "value": "Common Lisp"
+    }
+]

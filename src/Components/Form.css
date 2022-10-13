@@ -1,0 +1,12 @@
+.input--form{
+    margin: 10px 0 !important;
+    width: 100% !important;
+}
+.title{
+    margin: 20px 0 0 0 !important;
+    text-align: center;
+}
+.container--button{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,46 @@
+[
+    {
+        "id": "1",
+        "label": "Front End"
+    },
+    {
+        "id": "2",
+        "label": "Back End"
+    },
+    {
+        "id": "3",
+        "label": "Full Stack"
+    },
+    {
+        "id": "4",
+        "label": "Mobile"
+    },
+    {
+        "id": "5",
+        "label": "DevOps"
+    },
+    {
+        "id": "6",
+        "label": "Data Science"
+    },
+    {
+        "id": "7",
+        "label": "Design"
+    },
+    {
+        "id": "8",
+        "label": "Marketing"
+    },
+    {
+        "id": "9",
+        "label": "Product"
+    },
+    {
+        "id": "10",
+        "label": "Sales"
+    },
+    {
+        "id": "11",
+        "label": "Other"
+    }
+]
