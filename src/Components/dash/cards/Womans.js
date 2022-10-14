@@ -5,23 +5,23 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-const Total = () => {
+const Womans = () => {
     const [total, setTotal] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_geral.php`)
+        axios.get(`https://gabriellgomess.com/pesquisa/media_woman.php`)
         .then(res => {       
             setTotal(res.data);
             console.log("Media: ",res.data);
         })
     }, [total]);
     return (
-        <Card >
-            <CardActionArea>
+        <Card sx={{backgroundColor: "#ce93d8", width: 260}} >
+             <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
                 <Grid item>
-                <Typography color="textSecondary" gutterBottom variant="overline" >MÉDIA GERAL DE SALÁRIOS</Typography>
-                <Typography color="textPrimary" variant="h4">{total}</Typography>
+                <Typography color="textSecondary" gutterBottom variant="overline" >MÉDIA FEMININA</Typography>
+                <Typography color="textPrimary" variant="h6">{total}</Typography>
                 </Grid>
                 <Grid item>
                 <Avatar sx={{backgroundColor: 'success.main', height: 56, width: 56}}>
@@ -39,4 +39,4 @@ const Total = () => {
     );
 };
 
-export default Total;
+export default Womans;

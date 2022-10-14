@@ -94,7 +94,7 @@ const Form = () => {
                     >
                         <FormControlLabel name="genero" {...register('genero')} value="Masculino" control={<Radio />} label="Masculino" />
                         <FormControlLabel name="genero" {...register('genero')} value="Feminino" control={<Radio />} label="Feminino" />
-                        <FormControlLabel name="genero" {...register('genero')} value="Outro" control={<Radio />} label="Outro" />
+                        {/* <FormControlLabel name="genero" {...register('genero')} value="Outro" control={<Radio />} label="Outro" /> */}
                     </RadioGroup>
                     </FormControl>
                     <Typography id="range-slider" color="text.secondary" gutterBottom>Tempo de Experiência ({experience})</Typography>

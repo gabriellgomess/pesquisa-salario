@@ -1,20 +1,19 @@
-import React, {useState, useEffect, PureComponent} from 'react';
+import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import collect from 'collect.js';
-import { BarChart, Bar, Cell, XAxis, YAxis, Label, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, Legend, ResponsiveContainer } from 'recharts';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import "./Chart.css";
 
-const Grafico = (props) => {
+const Grafico = () => {
     const [totalTech, setTotalTech] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_tech.php?genero=${props.genero}`)
+        axios.get(`https://gabriellgomess.com/pesquisa/media_tech.php`)
         .then(res => {       
             setTotalTech(res.data);            
         })
-    }, [totalTech, props.genero]);
+    }, [totalTech]);
 
     const countLang = collect(totalTech).groupBy('linguagem').map((value, key) => {
         return {

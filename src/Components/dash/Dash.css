@@ -7,3 +7,25 @@
 .grafico{
     margin: 10px 0 !important;
 }
+
+.container--genre{
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+.MuiPaper-root{
+    margin: 0 5px;
+}
+@media only screen and (max-width: 575px){
+    .container--genre{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 15px;
+        width: 100%;        
+    }
+    .MuiPaper-root{
+        width: 100% !important;
+        margin: 15px 0;
+    }
+}
