@@ -22,6 +22,7 @@ const Dash = () => {
                 row
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="row-radio-buttons-group"
+                defaultValue="Todos"
             >   
                 <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Todos" control={<Radio />} label="Todos" />
                 <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Feminino" control={<Radio />} label="Feminino" />
