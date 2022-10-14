@@ -46,7 +46,7 @@ const MenuBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/pesquisa/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

@@ -7,13 +7,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Divider from "@mui/material/Divider";
+import Grafico from "../chart/Chart";
 
 
 const Dash = () => {
     const [filterGenero, setFilterGenero] = useState();
-    useEffect(() => {
-        console.log(filterGenero);
-    }, [filterGenero]);
+
     return (
         <div className="container--dash">
             <FormControl>
@@ -27,12 +26,14 @@ const Dash = () => {
                 <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Todos" control={<Radio />} label="Todos" />
                 <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Feminino" control={<Radio />} label="Feminino" />
                 <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Masculino" control={<Radio />} label="Masculino" />
-                <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Outros" control={<Radio />} label="Outros" />
+                <FormControlLabel onChange={(e)=>setFilterGenero(e.target.value)} value="Outro" control={<Radio />} label="Outros" />
                 
             </RadioGroup>            
             </FormControl>
             <Divider />
             <Total genero = {filterGenero} />
+            <Divider className="divider" />
+            <Grafico className="grafico" genero = {filterGenero} />
         </div>
     );
     }

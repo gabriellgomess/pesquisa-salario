@@ -28,12 +28,14 @@ const Form = () => {
     const [estado, setEstado] = useState([]);
     const [stack, setStack] = useState([]);
     const [experience, setExperience] = useState("Até 1 ano");
+    const [paisSel, setPaisSel] = useState();
     
     useEffect(() => {
         setPais(paises);
         setLinguagem(linguagens);
         setEstado(estados);
         setStack(stacks);
+        setPaisSel();
     }, []);
     const [currency, setCurrency] = useState();
 
@@ -64,7 +66,7 @@ const Form = () => {
             reset();
         })
     };
- 
+    console.log(register.pais);
 
     return (
         <Card className='card' sx={{ width: 375 }}>
@@ -139,9 +141,11 @@ const Form = () => {
                             name="pais"                            
                             options={paises}
                             sx={{ width: 300 }}
+                            onChange={(event, value) => setPaisSel(value['label'])}
                             renderInput={(params) => <TextField {...register('pais')} {...params} label="País" />}
                         />
                     </FormControl>
+                    {paisSel === "Brasil" ?
                     <FormControl fullWidth>                    
                         <Autocomplete
                             className="input--form"
@@ -152,6 +156,7 @@ const Form = () => {
                             renderInput={(params) => <TextField {...register('estado')} {...params} label="Estado" />}
                         />
                     </FormControl>
+                    : null}
                     <CardActions className='container--button'>
                         <Button type="submit" variant="contained">Enviar</Button>
                     </CardActions>               

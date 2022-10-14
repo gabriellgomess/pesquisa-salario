@@ -1,3 +1,9 @@
 .container--dash{
-   
+   width: 100%;
+   max-width: 600px;
+   min-width: 300px;
+}
+
+.grafico{
+    margin: 10px 0 !important;
 }
