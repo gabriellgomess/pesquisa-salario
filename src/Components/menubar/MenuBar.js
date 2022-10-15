@@ -91,12 +91,12 @@ const MenuBar = () => {
             >   
                 <Link to="/pesquisa/" style={{ textDecoration: 'none' }}>         
                     <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Dashboard</Typography>
+                        <Typography sx={{color:'white'}} textAlign="center">Dashboard</Typography>
                     </MenuItem>
                 </Link>
                 <Link to="/pesquisa/Pesquisa" style={{ textDecoration: 'none' }}>
                     <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Pesquisa</Typography>
+                        <Typography  sx={{color:'white'}} textAlign="center">Pesquisa</Typography>
                     </MenuItem>
                 </Link>               
             </Menu>

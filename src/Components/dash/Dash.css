@@ -16,6 +16,10 @@
 .MuiPaper-root{
     margin: 0 5px;
 }
+.tabPanel1{
+    display: flex;
+    justify-content: center;
+}
 @media only screen and (max-width: 575px){
     .container--genre{
         display: flex;

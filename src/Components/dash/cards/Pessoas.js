@@ -45,9 +45,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
     return (
     
-    <Card className='container--pie' sx={{ minWidth: 315 }}>
+    <Card className='container--pie' sx={{ minWidth: 345 }}>
         <CardContent>
-        <PieChart width={400} height={300}>
+        <PieChart width={300} height={300}>
         <Legend />
           <Pie
             data={data}
