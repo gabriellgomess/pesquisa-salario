@@ -5,22 +5,22 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-const Mens = () => {
+const NonBinary = () => {
     const [total, setTotal] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_man.php`)
+        axios.get(`https://gabriellgomess.com/pesquisa/media_nonbinary.php`)
         .then(res => {       
             setTotal(res.data);
             console.log("Media: ",res.data);
         })
     }, [total]);
     return (
-        <Card sx={{backgroundColor: "#42a5f5", width: 200}} >
-            <CardActionArea>
+        <Card sx={{backgroundColor: "#ffb74d", width: 200}} >
+             <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
                 <Grid item>
-                <Typography color="textSecondary" gutterBottom variant="overline" >MÉDIA MASCULINA</Typography>
+                <Typography color="textSecondary" gutterBottom variant="overline" >MÉDIA NãO BINARIOS</Typography>
                 <Typography color="textPrimary" variant="h6">{total}</Typography>
                 </Grid>
                 <Grid item>
@@ -39,4 +39,4 @@ const Mens = () => {
     );
 };
 
-export default Mens;
+export default NonBinary;

@@ -15,7 +15,7 @@ const Womans = () => {
         })
     }, [total]);
     return (
-        <Card sx={{backgroundColor: "#ce93d8", width: 260}} >
+        <Card sx={{backgroundColor: "#ce93d8", width: 200}} >
              <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
@@ -24,7 +24,7 @@ const Womans = () => {
                 <Typography color="textPrimary" variant="h6">{total}</Typography>
                 </Grid>
                 <Grid item>
-                <Avatar sx={{backgroundColor: 'success.main', height: 56, width: 56}}>
+                <Avatar sx={{backgroundColor: 'success.main', height: 36, width: 36}}>
                     <AttachMoneyIcon />
                 </Avatar>
                 </Grid>

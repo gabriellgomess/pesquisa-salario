@@ -1,5 +1,5 @@
 .container--dash{
-   width: 100%;
+   width: 600px !important;
    max-width: 600px;
    min-width: 300px;
 }

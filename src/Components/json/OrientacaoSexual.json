@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "label": "Heterossexual"        
+    },
+    {
+        "id": "2",
+        "label": "Homossexual"
+    },
+    {
+        "id": "3",
+        "label": "Bissexual"
+    },
+    {
+        "id": "4",
+        "label": "Assexual"
+    },
+    {
+        "id": "5",
+        "label": "Panssexual"
+    },
+    {
+        "id": "6",
+        "label": "Queer"
+    },
+    {
+        "id": "8",
+        "label": "Outros"
+    }
+]

@@ -13,6 +13,7 @@ import paises from '../json/FormPaises.json';
 import linguagens from '../json/Language.json';
 import estados from '../json/Estados.json';
 import stacks from '../json/Stacks.json';
+import orientacaoSexual from '../json/OrientacaoSexual.json';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -27,6 +28,7 @@ const Form = () => {
     const [linguagem, setLinguagem] = useState([]);
     const [estado, setEstado] = useState([]);
     const [stack, setStack] = useState([]);
+    const [orientacao, setOrientacao] = useState([]);
     const [experience, setExperience] = useState("Até 1 ano");
     const [paisSel, setPaisSel] = useState();
     
@@ -35,6 +37,7 @@ const Form = () => {
         setLinguagem(linguagens);
         setEstado(estados);
         setStack(stacks);
+        setOrientacao(orientacaoSexual);
         setPaisSel();
     }, []);
     const [currency, setCurrency] = useState();
@@ -94,8 +97,18 @@ const Form = () => {
                     >
                         <FormControlLabel name="genero" {...register('genero')} value="Masculino" control={<Radio />} label="Masculino" />
                         <FormControlLabel name="genero" {...register('genero')} value="Feminino" control={<Radio />} label="Feminino" />
-                        {/* <FormControlLabel name="genero" {...register('genero')} value="Outro" control={<Radio />} label="Outro" /> */}
+                        <FormControlLabel name="genero" {...register('genero')} value="Nao Binario" control={<Radio />} label="Não Binário" />
                     </RadioGroup>
+                    </FormControl>
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="orientacao"
+                            name="orientacao"
+                            options={orientacao}                            
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField {...register("orientacao")} {...params} label="Orientação Sexual" />}
+                        />
                     </FormControl>
                     <Typography id="range-slider" color="text.secondary" gutterBottom>Tempo de Experiência ({experience})</Typography>
                     <Slider
