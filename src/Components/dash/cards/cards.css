@@ -2,3 +2,10 @@
     width: 40% !important;
     margin: 10px;
 }
+.wrapper--grafico{
+    margin-top: 30px;
+}
+.custom-tooltip{
+    background: #0288d1 !important;
+    padding: 10px;
+}

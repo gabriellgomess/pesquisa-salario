@@ -7,11 +7,9 @@ import Box from '@mui/material/Box';
 import Total from './cards/Total';
 import Mens from './cards/Mens';
 import Womans from './cards/Womans';
-import Pessoas from './cards/Pessoas';
-import Pais from './cards/Pais';
-import Estado from './cards/Estado'
+import CardPie from './cards/CardPie'
 import NonBinary from './cards/NonBinary';
-import Grafico from '../chart/Chart';
+import Grafico from './cards/Chart';
 import './Dash.css';
 
 function TabPanel(props) {
@@ -69,15 +67,17 @@ const Dash = () => {
           <Typography variant="overline" gutterBottom>Quem são e onde estão</Typography>
         </Box>       
         <Box className="container--cards">           
-          <Pessoas />
-          <Pais />
-          <Estado />
-        </Box>
-        
+          <CardPie tipo='genero' />
+          <CardPie tipo='pais' />
+          <CardPie tipo='estado' />
+          <CardPie tipo='idade' />
+        </Box>        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>
-        <Grafico className="grafico" />
+        <Grafico tipo='linguagem' />
+        <Grafico tipo='framework' />
+        <Grafico tipo='stack' />
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={2}>
       <Typography variant="h3" gutterBottom>Remuneração</Typography>

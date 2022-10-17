@@ -38,7 +38,7 @@ const MenuBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar component='nav'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Code sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
