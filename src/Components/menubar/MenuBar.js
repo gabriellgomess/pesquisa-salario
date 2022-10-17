@@ -130,11 +130,11 @@ const MenuBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings"> */}
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Gabriel Gomes" src="/static/images/avatar/2.jpg" />
               </IconButton>
-            </Tooltip>            
+            {/* </Tooltip>             */}
           </Box>
         </Toolbar>
       </Container>

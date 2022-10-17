@@ -4,9 +4,9 @@ import "./Pesquisa.css";
 
 const Pesquisa = () => {
     return (
-        <>
+        <div className='container--pesquisa'>
             <Form />
-        </>
+        </div>
     );
 }
 

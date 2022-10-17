@@ -20,14 +20,14 @@ const App = () => {
         <MenuBar />
           <CssBaseline />
           <Container fixed>
-            <Box className="container--app" sx={{ bgcolor: '#0288d1', height: '100vh' }} >
+            <Box className="container--app" sx={{ bgcolor: '#0288d1' }} >
             <Routes>
                 <Route exact path='/pesquisa/' element={<Dashboard />} />
                 <Route path='/pesquisa/Pesquisa' element={<Pesquisa />} />
             </Routes>
             </Box>            
           </Container>           
-          </ThemeProvider>
+      </ThemeProvider>
     );
 }
 

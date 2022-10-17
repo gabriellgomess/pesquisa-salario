@@ -1,5 +1,4 @@
 .container--pie{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 40% !important;
+    margin: 10px;
 }

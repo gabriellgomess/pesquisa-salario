@@ -1,6 +1,6 @@
 .container--dash{
-   width: 600px !important;
-   max-width: 600px;
+   width: 100% !important;
+   max-width: 900px;
    min-width: 300px;
 }
 
@@ -13,14 +13,24 @@
     margin-top: 25px;
     justify-content: space-between;
 }
-.MuiPaper-root{
-    margin: 0 5px;
-}
+
 .tabPanel1{
     display: flex;
     justify-content: center;
+    /* width: 100% !important; */
+    
 }
-@media only screen and (max-width: 575px){
+.container--cards{
+    width: 800px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.container--title{
+    width: 400px;
+}
+@media only screen and (max-width: 900px){
     .container--genre{
         display: flex;
         flex-wrap: wrap;
@@ -28,8 +38,9 @@
         margin-top: 15px;
         width: 100%;        
     }
-    .MuiPaper-root{
-        width: 100% !important;
-        margin: 15px 0;
+    .container--cards{
+        flex-direction: column;
     }
+    
+
 }

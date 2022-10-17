@@ -14,10 +14,12 @@ import linguagens from '../json/Language.json';
 import estados from '../json/Estados.json';
 import stacks from '../json/Stacks.json';
 import orientacaoSexual from '../json/OrientacaoSexual.json';
+import frameworks from '../json/Frameworks.json';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
+import Divider from '@mui/material/Divider';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
@@ -29,15 +31,18 @@ const Form = () => {
     const [estado, setEstado] = useState([]);
     const [stack, setStack] = useState([]);
     const [orientacao, setOrientacao] = useState([]);
+    const [framework, setFramework] = useState([]);
     const [experience, setExperience] = useState("Até 1 ano");
     const [paisSel, setPaisSel] = useState();
     
+/* A hook that is called when the component is mounted. */
     useEffect(() => {
         setPais(paises);
         setLinguagem(linguagens);
         setEstado(estados);
         setStack(stacks);
         setOrientacao(orientacaoSexual);
+        setFramework(frameworks);
         setPaisSel();
     }, []);
     const [currency, setCurrency] = useState();
@@ -60,6 +65,7 @@ const Form = () => {
         }
     }
 
+/* A function that is called when the form is submitted. */
     const { register, handleSubmit, reset,  errors } = useForm();
     const onSubmit = data => {
         axios.post('https://gabriellgomess.com/pesquisa/coleta.php', data)
@@ -73,22 +79,18 @@ const Form = () => {
 
     return (
         <Card className='card' sx={{ width: 375 }}>
-            <Typography variant='h5' className='title' color="text.secondary">
-                PESQUISA DE SALÁRIO
-            </Typography>
             <CardContent>
+            <Typography variant='h5' className='title' color="text.secondary">
+                    PESQUISA DE PERFIL
+            </Typography>
                 <form className='form' onSubmit={handleSubmit(onSubmit)}>
-                    <FormControl fullWidth>                    
-                        <Autocomplete
-                            className="input--form"
-                            id="stack"
-                            name="stack"
-                            options={stack}                            
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...register("stack")} {...params} label="Stack Tecnológico" />}
-                        />
-                    </FormControl>
-                    <FormControl>
+                    <Divider className='divider' />
+                    <Typography variant='p' className='title' color="#0288d1">
+                        Pessoas
+                    </Typography>
+                    <Divider className='divider' />
+                    <TextField className='input--form--min' id="idade" type="number" label="Idade" variant="outlined" name="idade" {...register("idade")} required />
+                    <FormControl className='formControl'>
                     <FormLabel id="label-genero">Gênero</FormLabel>
                     <RadioGroup
                         row
@@ -107,10 +109,78 @@ const Form = () => {
                             name="orientacao"
                             options={orientacao}                            
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...register("orientacao")} {...params} label="Orientação Sexual" />}
+                            renderInput={(params) => <TextField  required {...register("orientacao")} {...params} label="Orientação Sexual" />}
                         />
                     </FormControl>
-                    <Typography id="range-slider" color="text.secondary" gutterBottom>Tempo de Experiência ({experience})</Typography>
+                    <Divider className='divider' />
+                    <Typography variant='p' className='title' color="#0288d1">
+                        Localização
+                    </Typography>
+                    <Divider className='divider' />
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="pais"
+                            name="pais"                            
+                            options={paises}
+                            sx={{ width: 300 }}
+                            onChange={(event, value) => setPaisSel(value['label'])}
+                            renderInput={(params) => <TextField  required {...register('pais')} {...params} label="País" />}
+                        />
+                    </FormControl>
+                    {paisSel === "Brasil" ?
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="estado"
+                            name="estado"                            
+                            options={estados}
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField  required {...register('estado')} {...params} label="Estado" />}
+                        />
+                    </FormControl>
+                    : null}
+                    <Divider className='divider' />
+                    <Typography variant='p' className='title' color="#0288d1">
+                        Tecnologias
+                    </Typography>
+                    <Divider className='divider' />
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="stack"
+                            name="stack"
+                            options={stack}                            
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField  required {...register("stack")} {...params} label="Stack Tecnológico" />}
+                        />
+                    </FormControl>
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="linguagem-principal"
+                            name="linguagem"                            
+                            options={linguagem}
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField  required {...register('linguagem')} {...params} label="Linguagem principal" />}
+                        />
+                    </FormControl>
+                    <FormControl fullWidth>                    
+                        <Autocomplete
+                            className="input--form"
+                            id="framework-principal"
+                            name="framework"                            
+                            options={framework}
+                            sx={{ width: 300 }}
+                            renderInput={(params) => <TextField  required {...register('framework')} {...params} label="Framework/Biblioteca principal" />}
+                        />
+                    </FormControl>
+                    <Divider className='divider' />
+                    <Typography variant='p' className='title' color="#0288d1">
+                        Experiência
+                    </Typography>
+                    <Divider className='divider' />
+                    <Typography id="range-slider" color="text.secondary" gutterBottom>Experiência ({experience})</Typography>
                     <Slider
                         label="Experiência"
                         aria-label="Experiência"
@@ -131,45 +201,18 @@ const Form = () => {
                         aria-labelledby="senioridade"
                         name="senioridade"
                     >
+                        <FormControlLabel name='senioridade' {...register('senioridade')} value="Estagio" control={<Radio />} label="Estágio" />
                         <FormControlLabel name='senioridade' {...register('senioridade')} value="Junior" control={<Radio />} label="Junior" />
                         <FormControlLabel name='senioridade' {...register('senioridade')} value="Pleno" control={<Radio />} label="Pleno" />
                         <FormControlLabel name='senioridade' {...register('senioridade')} value="Senior" control={<Radio />} label="Sênior" />
                     </RadioGroup>
                     </FormControl>
-                    <TextField onKeyUp={(event)=>handleFormatCurrency(event)} name="salario" {...register("salario")} className="input--form" id="outlined-basic" label="Salário" variant="outlined" />                   
-                    <FormControl fullWidth>                    
-                        <Autocomplete
-                            className="input--form"
-                            id="linguagem-principal"
-                            name="linguagem"                            
-                            options={linguagem}
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...register('linguagem')} {...params} label="Linguagem principal" />}
-                        />
-                    </FormControl>
-                    <FormControl fullWidth>                    
-                        <Autocomplete
-                            className="input--form"
-                            id="pais"
-                            name="pais"                            
-                            options={paises}
-                            sx={{ width: 300 }}
-                            onChange={(event, value) => setPaisSel(value['label'])}
-                            renderInput={(params) => <TextField {...register('pais')} {...params} label="País" />}
-                        />
-                    </FormControl>
-                    {paisSel === "Brasil" ?
-                    <FormControl fullWidth>                    
-                        <Autocomplete
-                            className="input--form"
-                            id="estado"
-                            name="estado"                            
-                            options={estados}
-                            sx={{ width: 300 }}
-                            renderInput={(params) => <TextField {...register('estado')} {...params} label="Estado" />}
-                        />
-                    </FormControl>
-                    : null}
+                    <Divider className='divider' />
+                    <Typography variant='p' className='title' color="#0288d1">
+                        Remuneração
+                    </Typography>
+                    <Divider className='divider' />
+                    <TextField onKeyUp={(event)=>handleFormatCurrency(event)} name="salario" {...register("salario")} className="input--form" id="outlined-basic" label="Salário" variant="outlined"  required /> 
                     <CardActions className='container--button'>
                         <Button type="submit" variant="contained">Enviar</Button>
                     </CardActions>               

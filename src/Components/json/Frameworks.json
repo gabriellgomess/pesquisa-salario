@@ -1,0 +1,70 @@
+[
+    {
+        "id": "1",
+        "label": "Angular"
+    },
+    {
+        "id": "2",
+        "label": "React"
+    },
+    {
+        "id": "3",
+        "label": "Vue"
+    },
+    {
+        "id": "4",
+        "label": "jQuery"
+    },
+    {
+        "id": "5",
+        "label": "Ember"
+    },
+    {
+        "id": "6",
+        "label": "Express"
+    },
+    {
+        "id": "7",
+        "label": "Adonis"
+    },
+    {
+        "id": "8",
+        "label": "Bootstrap"
+    },
+    {
+        "id": "9",
+        "label": "Materialize"
+    },
+    {
+        "id": "10",
+        "label": "Laravel"
+    },
+    {
+        "id": "11",
+        "label": "CodeIgniter"
+    },
+    {
+        "id": "12",
+        "label": "Symfony"
+    },
+    {
+        "id": "13",
+        "label": "CakePHP"
+    },
+    {
+        "id": "14",
+        "label": "Spring"
+    },
+    {
+        "id": "15",
+        "label": "Django"
+    },
+    {
+        "id": "16",
+        "label": "RubyOnRails"
+    },
+    {
+        "id": "17",
+        "label": "Outro"
+    }
+]

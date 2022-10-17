@@ -8,6 +8,8 @@ import Total from './cards/Total';
 import Mens from './cards/Mens';
 import Womans from './cards/Womans';
 import Pessoas from './cards/Pessoas';
+import Pais from './cards/Pais';
+import Estado from './cards/Estado'
 import NonBinary from './cards/NonBinary';
 import Grafico from '../chart/Chart';
 import './Dash.css';
@@ -53,7 +55,7 @@ const Dash = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box className="container--dash">
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Pessoas" {...a11yProps(0)} />
@@ -62,8 +64,16 @@ const Dash = () => {
         </Tabs>
       </Box>
       <TabPanel className='tabPanel1' value={value} index={0}>
-        <Typography variant="h3" gutterBottom>Pessoas</Typography>
-        <Pessoas />
+        <Box className="container--title">
+          <Typography variant="h3" gutterBottom>Pessoas</Typography>
+          <Typography variant="overline" gutterBottom>Quem são e onde estão</Typography>
+        </Box>       
+        <Box className="container--cards">           
+          <Pessoas />
+          <Pais />
+          <Estado />
+        </Box>
+        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>

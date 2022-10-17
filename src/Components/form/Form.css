@@ -2,6 +2,10 @@
     margin: 10px 0 !important;
     width: 100% !important;
 }
+.input--form--min{
+    margin: 10px 10px 10px 0 !important;
+    width: 30% !important;
+}
 .title{
     margin: 20px 0 0 0 !important;
     text-align: center;
@@ -11,6 +15,15 @@
     justify-content: center;
 }
 .card{
-    height: 830px;
     padding: 20px;
+    width: 800px !important;
+    height: fit-content;
+}
+
+@media only screen and (max-width: 770px){
+    .card{
+        padding: 20px;
+        width: 100% !important;
+        height: fit-content;
+    }
 }
