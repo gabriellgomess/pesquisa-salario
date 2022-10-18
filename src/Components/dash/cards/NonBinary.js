@@ -15,7 +15,7 @@ const NonBinary = () => {
         })
     }, [total]);
     return (
-        <Card sx={{backgroundColor: "#ffb74d", width: 200}} >
+        <Card className="card--genre" sx={{backgroundColor: "#ffb74d"}} >
              <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>

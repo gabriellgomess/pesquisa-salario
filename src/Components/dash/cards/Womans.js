@@ -15,7 +15,7 @@ const Womans = () => {
         })
     }, [total]);
     return (
-        <Card sx={{backgroundColor: "#ce93d8", width: 200}} >
+        <Card className="card--genre" sx={{backgroundColor: "#ce93d8"}} >
              <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
