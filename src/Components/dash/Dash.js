@@ -7,7 +7,8 @@ import Box from '@mui/material/Box';
 import Total from './cards/Total';
 import Mens from './cards/Mens';
 import Womans from './cards/Womans';
-import CardPie from './cards/CardPie'
+import CardPie from './cards/CardPie';
+import CardPieApex from './cards/CardPieApex';
 import NonBinary from './cards/NonBinary';
 import Grafico from './cards/Chart';
 import './Dash.css';
@@ -67,10 +68,14 @@ const Dash = () => {
           <Typography variant="overline" gutterBottom>Quem são e onde estão</Typography>
         </Box>       
         <Box className="container--cards">           
-          <CardPie tipo='genero' />
+          {/* <CardPie tipo='genero' />
           <CardPie tipo='pais' />
           <CardPie tipo='estado' />
-          <CardPie tipo='idade' />
+          <CardPie tipo='idade' /> */}
+          <CardPieApex tipo='genero' />
+          <CardPieApex tipo='pais' />
+          <CardPieApex tipo='estado' />
+          <CardPieApex tipo='idade' />
         </Box>        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>

@@ -85,7 +85,7 @@ const Form = () => {
             </Typography>
                 <form className='form' onSubmit={handleSubmit(onSubmit)}>
                     <Divider className='divider' />
-                    <Typography variant='p' className='title' color="#0288d1">
+                    <Typography variant='span' className='title' color="#0288d1">
                         Pessoas
                     </Typography>
                     <Divider className='divider' />
@@ -113,7 +113,7 @@ const Form = () => {
                         />
                     </FormControl>
                     <Divider className='divider' />
-                    <Typography variant='p' className='title' color="#0288d1">
+                    <Typography variant='span' className='title' color="#0288d1">
                         Localização
                     </Typography>
                     <Divider className='divider' />
@@ -141,7 +141,7 @@ const Form = () => {
                     </FormControl>
                     : null}
                     <Divider className='divider' />
-                    <Typography variant='p' className='title' color="#0288d1">
+                    <Typography variant='span' className='title' color="#0288d1">
                         Tecnologias
                     </Typography>
                     <Divider className='divider' />
@@ -176,7 +176,7 @@ const Form = () => {
                         />
                     </FormControl>
                     <Divider className='divider' />
-                    <Typography variant='p' className='title' color="#0288d1">
+                    <Typography variant='span' className='title' color="#0288d1">
                         Experiência
                     </Typography>
                     <Divider className='divider' />
@@ -208,7 +208,7 @@ const Form = () => {
                     </RadioGroup>
                     </FormControl>
                     <Divider className='divider' />
-                    <Typography variant='p' className='title' color="#0288d1">
+                    <Typography variant='span' className='title' color="#0288d1">
                         Remuneração
                     </Typography>
                     <Divider className='divider' />
