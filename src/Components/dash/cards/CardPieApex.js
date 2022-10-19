@@ -46,18 +46,21 @@ const CardPieApex = (props) => {
     });
     const options = {
         chart: {
-            width: 380,
+            width: 280,
             type: 'pie',
+        },
+        legend: {
+            position: 'bottom'
         },
         labels: labels,        
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 580,
             options: {
                 chart: {
                     width: 200
                 },
                 legend: {
-                    position: 'bottom'
+                    position: 'bottom',
                 }
             }
         }]
@@ -68,15 +71,22 @@ console.log("LABELS: ",labels)
 console.log("SERIES: ",series)
     
       return (
+        <Card className='container--pie'>
+        <Typography sx={{margin: 1}} variant="overline" component="div">
+            {props.tipo}
+        </Typography>
+        <CardContent>
         <Chart 
             type="pie"
-            width={550}
-            height={550}
-            series = { series }                
-
+            width={350}
+            height={350}
+            series = { series }
             options = { options }
         >
         </Chart>
+        </CardContent>
+        </Card>
+
       )
  
   }

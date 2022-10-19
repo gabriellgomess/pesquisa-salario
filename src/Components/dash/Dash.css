@@ -21,7 +21,7 @@
     
 }
 .container--cards{
-    width: 800px !important;
+    width: 840px !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -47,7 +47,7 @@
         flex-direction: column;
     }
     .container--cards{
-        width: 400px !important;
+        width: 300px !important;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

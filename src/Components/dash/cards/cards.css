@@ -1,6 +1,24 @@
 .container--pie{
-    width: 40% !important;
-    margin: 10px;
+    width: 100% !important;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.apexcharts-legend-text{
+    color: #fff !important;
+}
+.apexcharts-text{
+    fill: #fff !important;
+}
+
+.apexcharts-tooltip-title, 
+.apexcharts-tooltip.apexcharts-theme-light,
+.apexcharts-menu{
+    background: #12121297 !important;
 }
 .wrapper--grafico{
     margin-top: 30px;

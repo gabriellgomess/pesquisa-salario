@@ -10,7 +10,7 @@ import Womans from './cards/Womans';
 import CardPie from './cards/CardPie';
 import CardPieApex from './cards/CardPieApex';
 import NonBinary from './cards/NonBinary';
-import Grafico from './cards/Chart';
+import GraficoApex from './cards/ChartApex';
 import './Dash.css';
 
 function TabPanel(props) {
@@ -80,9 +80,9 @@ const Dash = () => {
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>
-        <Grafico tipo='linguagem' />
-        <Grafico tipo='framework' />
-        <Grafico tipo='stack' />
+        <GraficoApex tipo='linguagem' />
+        <GraficoApex tipo='framework' />
+        <GraficoApex tipo='stack' />
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={2}>
       <Typography variant="h3" gutterBottom>Remuneração</Typography>
