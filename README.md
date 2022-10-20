@@ -14,7 +14,10 @@ https://gabriellgomess.com/pesquisa/
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](/src/img/pessoas.jpg)
+![App Screenshot](/src/img/stacks.jpg)
+![App Screenshot](/src/img/valores.jpg)
+![App Screenshot](/src/img/formulario.jpg)
 
 
 ## Stack utilizada
