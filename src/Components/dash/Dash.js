@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 import Total from './cards/Total';
 import Mens from './cards/Mens';
 import Womans from './cards/Womans';
-import CardPie from './cards/CardPie';
 import CardPieApex from './cards/CardPieApex';
 import NonBinary from './cards/NonBinary';
 import GraficoApex from './cards/ChartApex';

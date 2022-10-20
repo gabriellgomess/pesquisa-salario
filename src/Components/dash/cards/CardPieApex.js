@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import axios from 'axios';
 import collect from 'collect.js';
-import { FormControlUnstyled } from '@mui/base';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
 import Chart from 'react-apexcharts'
 import './cards.css';
-// import { Tooltip } from '@mui/material';
 
 const CardPieApex = (props) => {
     const [total, setTotal] = useState([]);
@@ -22,28 +16,34 @@ const CardPieApex = (props) => {
             setTotal(res.data);
             setTimeout(() => {
             }, 1000);
-        
         })
     }, []);
-
+    
     const countLang = collect(total).groupBy(props.tipo).map((value, key) => {
         return {
             name: key,
             value: value.count()
         }
+        
     }).toArray();
 
+
     const data = [];
+
     countLang.forEach((item) => {
         data.push({name: item.name, value: item.value});
     });
-    
-    const series = data.map((item) => {
-        return item.value;
+
+    const manipulador = props.tipo === 'idade' ? total : data;
+
+    const series = manipulador.map((item) => {
+       return props.tipo == 'idade'? parseInt(item.qtd) : item.value; ;        
+    });    
+    const labels = manipulador.map((item) => {
+        return props.tipo == 'idade' ? item.idade : item.name;
     });
-    const labels = data.map((item) => {
-        return item.name;
-    });
+
+
     const options = {
         chart: {
             width: 280,
@@ -66,9 +66,6 @@ const CardPieApex = (props) => {
         }]
     }
 
-
-console.log("LABELS: ",labels)
-console.log("SERIES: ",series)
     
       return (
         <Card className='container--pie'>
