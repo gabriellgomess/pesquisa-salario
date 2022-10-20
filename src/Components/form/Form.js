@@ -22,6 +22,7 @@ import FormLabel from '@mui/material/FormLabel';
 import Divider from '@mui/material/Divider';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import MyContext from '../../contexts/myContext';
 
 
 
@@ -34,6 +35,8 @@ const Form = () => {
     const [framework, setFramework] = useState([]);
     const [experience, setExperience] = useState("Até 1 ano");
     const [paisSel, setPaisSel] = useState();
+
+    const { testeState, setTesteState } = React.useContext(MyContext);
     
 /* A hook that is called when the component is mounted. */
     useEffect(() => {
@@ -44,6 +47,7 @@ const Form = () => {
         setOrientacao(orientacaoSexual);
         setFramework(frameworks);
         setPaisSel();
+        
     }, []);
     const [currency, setCurrency] = useState();
 
@@ -215,7 +219,7 @@ const Form = () => {
                     <TextField onKeyUp={(event)=>handleFormatCurrency(event)} name="salario" {...register("salario")} className="input--form" id="outlined-basic" label="Salário" variant="outlined"  required /> 
                     <CardActions className='container--button'>
                         <Button type="submit" variant="contained">Enviar</Button>
-                    </CardActions>               
+                    </CardActions>                               
                 </form>
             </CardContent>
             

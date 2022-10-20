@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Code from '@mui/icons-material/Code';
 import { Link } from 'react-router-dom';
+import MyContext from '../../contexts/myContext';
 
 // const pages = ['Home', 'Pessoas', 'Mensagens'];
 const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
@@ -21,6 +22,8 @@ const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
 const MenuBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const { testeState, setTesteState } = React.useContext(MyContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -59,7 +62,6 @@ const MenuBar = () => {
           >
             GABRIEL.DEV
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
