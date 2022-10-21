@@ -1,10 +1,10 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import collect from 'collect.js';
-import { BarChart, Bar, XAxis, Legend, ResponsiveContainer, Tooltip } from 'recharts';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 import "./cards.css";
 import Chart from 'react-apexcharts'
 
@@ -61,7 +61,7 @@ const GraficoApex = (props) => {
     }
     const series = [{
         name: 'Quantidade',
-        data: data.map((item) => {
+        data: data?.map((item) => {
             return item.quantidade;
         })
     }]
@@ -73,7 +73,9 @@ const GraficoApex = (props) => {
             {props.tipo}
         </Typography>
         <CardContent>
+            {data.length > 0 ? 
             <Chart options={options} series={series} type="bar" />
+            : <Typography variant="h5" color="text.secondary" gutterBottom>Buscando informações <CircularProgress /></Typography>}
         </CardContent>
     </Card>
     

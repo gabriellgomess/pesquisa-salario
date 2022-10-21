@@ -11,7 +11,6 @@ const Total = () => {
         axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=2`)
         .then(res => {       
             setTotal(res.data);
-            console.log("Media: ",res.data);
         })
     }, [total]);
     return (

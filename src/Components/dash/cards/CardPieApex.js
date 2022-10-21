@@ -4,6 +4,7 @@ import collect from 'collect.js';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
+import CircularProgress from '@mui/material/CircularProgress';
 import Chart from 'react-apexcharts'
 import './cards.css';
 
@@ -36,11 +37,11 @@ const CardPieApex = (props) => {
 
     const manipulador = props.tipo === 'idade' ? total : data;
 
-    const series = manipulador.map((item) => {
-       return props.tipo == 'idade'? parseInt(item.qtd) : item.value; ;        
+    const series = manipulador?.map((item) => {
+       return props.tipo === 'idade'? parseInt(item.qtd) : item.value; ;        
     });    
-    const labels = manipulador.map((item) => {
-        return props.tipo == 'idade' ? item.idade : item.name;
+    const labels = manipulador?.map((item) => {
+        return props.tipo === 'idade' ? item.idade : item.name;
     });
 
 
@@ -73,6 +74,7 @@ const CardPieApex = (props) => {
             {props.tipo}
         </Typography>
         <CardContent>
+            {series?.length > 0 ? 
         <Chart 
             type="pie"
             width={350}
@@ -81,6 +83,7 @@ const CardPieApex = (props) => {
             options = { options }
         >
         </Chart>
+        : <Typography variant="h5" color="text.secondary" gutterBottom>Buscando informações <CircularProgress /></Typography>}
         </CardContent>
         </Card>
 

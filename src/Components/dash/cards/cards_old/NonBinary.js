@@ -11,7 +11,6 @@ const NonBinary = () => {
         axios.get(`https://gabriellgomess.com/pesquisa/media_nonbinary.php`)
         .then(res => {       
             setTotal(res.data);
-            console.log("Media: ",res.data);
         })
     }, [total]);
     return (

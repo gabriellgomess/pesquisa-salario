@@ -123,20 +123,24 @@ const MenuBar = () => {
             GABRIEL.DEV
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}> 
-               <Link to="/pesquisa/" style={{ textDecoration: 'none' }}>    
+               <Link to="/pesquisa/" style={{ textDecoration: 'none' }}>
+               <Tooltip title="Nossos números">    
               <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Dashboard</Button>
+              </Tooltip>
                 </Link>
                 <Link to="/pesquisa/Pesquisa" style={{ textDecoration: 'none' }}>
-              <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Pesquisa</Button>
+                <Tooltip title="Formulário de pesquisa">
+                  <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Pesquisa</Button>
+                </Tooltip>
                 </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings"> */}
+            <Tooltip title="Powered by Gabriel Gomes">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Gabriel Gomes" src="/static/images/avatar/2.jpg" />
               </IconButton>
-            {/* </Tooltip>             */}
+            </Tooltip>            
           </Box>
         </Toolbar>
       </Container>

@@ -73,14 +73,14 @@ const Form = () => {
     const { register, handleSubmit, reset,  errors } = useForm();
     const onSubmit = data => {
         
-        axios.post('https://gabriellgomess.com/pesquisa/api/cadastrar.php', data)
+        axios.post("https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=1", data)
         .then(res => {
-            document.getElementsByClassName('form')[0].reset();            
+            // document.getElementsByClassName('form')[0].reset();          
             console.log(res.data);
-            reset();
+            
         })
+        reset();
     };
-    console.log(register.pais);
 
     return (
         <Card className='card' sx={{ width: 375 }}>

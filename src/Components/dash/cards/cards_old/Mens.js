@@ -11,7 +11,6 @@ const Mens = () => {
         axios.get(`https://gabriellgomess.com/pesquisa/media_man.php`)
         .then(res => {       
             setTotal(res.data);
-            console.log("Media: ",res.data);
         })
     }, [total]);
     return (

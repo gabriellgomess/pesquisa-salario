@@ -11,7 +11,6 @@ const Womans = () => {
         axios.get(`https://gabriellgomess.com/pesquisa/media_woman.php`)
         .then(res => {       
             setTotal(res.data);
-            console.log("Media: ",res.data);
         })
     }, [total]);
     return (
@@ -28,11 +27,7 @@ const Womans = () => {
                     <AttachMoneyIcon />
                 </Avatar>
                 </Grid>
-            </Grid>
-            {/* <Box sx={{ alignItems: 'center', display: 'flex', pt: 2 }}>
-                <ArrowUpwardIcon color="success" /><Typography variant="body2" sx={{ mr: 1 }}>16.2%</Typography>
-                <Typography color="textSecondary" variant="caption" >Since last month</Typography>
-            </Box> */}
+            </Grid>            
             </CardContent>
             </CardActionArea>
         </Card>
