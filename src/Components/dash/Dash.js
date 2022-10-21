@@ -5,10 +5,8 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Total from './cards/Total';
-import Mens from './cards/Mens';
-import Womans from './cards/Womans';
+import CardGenre from './cards/CardGenre';
 import CardPieApex from './cards/CardPieApex';
-import NonBinary from './cards/NonBinary';
 import GraficoApex from './cards/ChartApex';
 import './Dash.css';
 
@@ -66,30 +64,26 @@ const Dash = () => {
           <Typography variant="h3" gutterBottom>Pessoas</Typography>
           <Typography variant="overline" gutterBottom>Quem são e onde estão</Typography>
         </Box>       
-        <Box className="container--cards">           
-          {/* <CardPie tipo='genero' />
-          <CardPie tipo='pais' />
-          <CardPie tipo='estado' />
-          <CardPie tipo='idade' /> */}
-          <CardPieApex tipo='genero' />
-          <CardPieApex tipo='pais' />
-          <CardPieApex tipo='estado' />
-          <CardPieApex tipo='idade' />
+        <Box className="container--cards">
+          <CardPieApex p='4' tipo='genero' />
+          <CardPieApex p='7' tipo='pais' />
+          <CardPieApex p='8' tipo='estado' />
+          <CardPieApex p='5' tipo='idade' />
         </Box>        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>
-        <GraficoApex tipo='linguagem' />
-        <GraficoApex tipo='framework' />
-        <GraficoApex tipo='stack' />
+        <GraficoApex p='9' tipo='linguagem' />
+        <GraficoApex p='10' tipo='framework' />
+        <GraficoApex p='6' tipo='stack' />
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={2}>
       <Typography variant="h3" gutterBottom>Remuneração</Typography>
         <Total />
         <div className='container--genre'>
-            <Womans /> 
-            <Mens />
-            <NonBinary />
+            <CardGenre tipo = 'Masculino' />
+            <CardGenre tipo = 'Feminino' />
+            <CardGenre tipo = 'Nao Binario' />
         </div>
       </TabPanel>
     </Box>

@@ -11,7 +11,7 @@ const CardPieApex = (props) => {
     const [total, setTotal] = useState([]);
     const [open, setOpen] = useState(false);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_${props.tipo}.php`)
+        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=${props.p}`)
         .then(res => {       
             setTotal(res.data);
             setTimeout(() => {

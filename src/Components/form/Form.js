@@ -72,7 +72,8 @@ const Form = () => {
 /* A function that is called when the form is submitted. */
     const { register, handleSubmit, reset,  errors } = useForm();
     const onSubmit = data => {
-        axios.post('https://gabriellgomess.com/pesquisa/coleta.php', data)
+        
+        axios.post('https://gabriellgomess.com/pesquisa/api/cadastrar.php', data)
         .then(res => {
             document.getElementsByClassName('form')[0].reset();            
             console.log(res.data);

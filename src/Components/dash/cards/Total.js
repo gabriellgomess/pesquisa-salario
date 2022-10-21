@@ -8,7 +8,7 @@ import axios from 'axios';
 const Total = () => {
     const [total, setTotal] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_geral.php`)
+        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=2`)
         .then(res => {       
             setTotal(res.data);
             console.log("Media: ",res.data);

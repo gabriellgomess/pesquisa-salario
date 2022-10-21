@@ -11,7 +11,7 @@ import Chart from 'react-apexcharts'
 const GraficoApex = (props) => {
     const [totalTech, setTotalTech] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/media_${props.tipo}.php`)
+        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=${props.p}`)
         .then(res => {       
             setTotalTech(res.data);            
         })
