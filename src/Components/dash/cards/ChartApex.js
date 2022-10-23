@@ -32,7 +32,7 @@ const GraficoApex = (props) => {
 
     const options = {
         chart: {
-            width: 400,
+            width: 200,
             type: 'bar',
         },
         dataLabels: {

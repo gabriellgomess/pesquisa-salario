@@ -23,6 +23,8 @@ import Divider from '@mui/material/Divider';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import MyContext from '../../contexts/myContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -75,13 +77,34 @@ const Form = () => {
         
         axios.post("https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=1", data)
         .then(res => {
-            // document.getElementsByClassName('form')[0].reset();          
-            console.log(res.data);
+            if(res.data === "Cadastrado com sucesso!"){
+                toast.success('Dados inseridos, obrigado!', {
+                    position: "bottom-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+            }else{
+                toast.error('Ops! Algo deu errado!', {
+                    position: "bottom-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+            }
             
         })
         reset();
     };
-
+    
     return (
         <Card className='card' sx={{ width: 375 }}>
             <CardContent>
@@ -223,7 +246,18 @@ const Form = () => {
                     </CardActions>                               
                 </form>
             </CardContent>
-            
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </Card>          
     );
 }

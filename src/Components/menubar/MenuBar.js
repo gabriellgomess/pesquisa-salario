@@ -15,6 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Code from '@mui/icons-material/Code';
 import { Link } from 'react-router-dom';
 import MyContext from '../../contexts/myContext';
+import Contador from '../dash/cards/Contador';
 
 // const pages = ['Home', 'Pessoas', 'Mensagens'];
 const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
@@ -131,11 +132,11 @@ const MenuBar = () => {
                 <Link to="/pesquisa/Pesquisa" style={{ textDecoration: 'none' }}>
                 <Tooltip title="Formulário de pesquisa">
                   <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Pesquisa</Button>
-                </Tooltip>
+                </Tooltip>                
                 </Link>
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Contador />
             <Tooltip title="Powered by Gabriel Gomes">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Gabriel Gomes" src="/static/images/avatar/2.jpg" />

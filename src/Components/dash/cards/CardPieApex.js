@@ -46,6 +46,28 @@ const CardPieApex = (props) => {
 
 
     const options = {
+        colors :[
+            '#42a5f5',
+            '#66bb6a',
+            '#ff7043',
+            '#ab47bc',
+            '#26c6da',
+            '#ffa726',
+            '#ef5350',
+            '#78909c',
+            '#5c6bc0',
+            '#ec407a',
+            '#29b6f6',
+            '#66bb6a',
+            '#ff7043',
+            '#ab47bc',
+            '#26c6da',
+            '#ffa726',
+            '#ef5350',
+            '#78909c',
+            '#5c6bc0'
+
+        ],
         chart: {
             width: 280,
             type: 'pie',

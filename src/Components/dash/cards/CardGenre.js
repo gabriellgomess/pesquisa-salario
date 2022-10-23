@@ -26,19 +26,19 @@ const CardGenre = (props) => {
         if(props.tipo === 'Masculino'){
             return 'Masculino';
         }else if(props.tipo === 'Feminino'){
-            return 'Feminino';
+            return 'Feminina';
         }else{
             return 'Não Binário';
         }
     }
    
     return (
-        <Card className="card--genre" sx={{backgroundColor: colors()}} >
+        <Card className="card--genre" sx={{backgroundColor: '#2c2c2c'}} >
              <CardActionArea>
             <CardContent>
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
                 <Grid item>
-                <Typography color="textSecondary" gutterBottom variant="overline" >MÉDIA {tipo()}</Typography>
+                <Typography color={colors()} gutterBottom variant="overline" >MÉDIA {tipo()}</Typography>
                 <Typography color="textPrimary" variant="h6">{total}</Typography>
                 
                 </Grid>

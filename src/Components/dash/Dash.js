@@ -73,9 +73,12 @@ const Dash = () => {
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>
-        <GraficoApex p='9' tipo='linguagem' />
-        <GraficoApex p='10' tipo='framework' />
-        <GraficoApex p='6' tipo='stack' />
+        <Box className="container--charts">
+          <GraficoApex p='9' tipo='linguagem' />
+          <GraficoApex p='10' tipo='framework' />
+          <GraficoApex p='6' tipo='stack' />
+          <GraficoApex p='12' tipo='senioridade' />
+        </Box>
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={2}>
       <Typography variant="h3" gutterBottom>Remuneração</Typography>
@@ -83,9 +86,9 @@ const Dash = () => {
         <div className='container--genre'>
             <CardGenre tipo = 'Masculino' />
             <CardGenre tipo = 'Feminino' />
-            <CardGenre tipo = 'Nao Binario' />
+            <CardGenre tipo = 'Nao Binario' />            
         </div>
-      </TabPanel>
+      </TabPanel>      
     </Box>
   );
 }

@@ -4,7 +4,6 @@
 }
 .input--form--min{
     margin: 10px 10px 10px 0 !important;
-    width: 30% !important;
 }
 .title{
     margin: 20px 0 0 0 !important;
@@ -25,5 +24,8 @@
         padding: 20px;
         width: 100% !important;
         height: fit-content;
+    }
+    .input--form--min{
+        margin: 10px 0px 10px 0 !important;
     }
 }
