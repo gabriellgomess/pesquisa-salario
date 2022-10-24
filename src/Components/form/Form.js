@@ -37,7 +37,6 @@ const Form = () => {
     const [framework, setFramework] = useState([]);
     const [experience, setExperience] = useState("Até 1 ano");
     const [paisSel, setPaisSel] = useState();
-
     const { testeState, setTesteState } = React.useContext(MyContext);
     
 /* A hook that is called when the component is mounted. */
@@ -101,10 +100,9 @@ const Form = () => {
                     });
             }
             
-        })
-        reset();
+        })       
     };
-    
+   
     return (
         <Card className='card' sx={{ width: 375 }}>
             <CardContent>

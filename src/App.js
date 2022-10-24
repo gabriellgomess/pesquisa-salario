@@ -27,8 +27,8 @@ const App = () => {
             <Container fixed>
               <Box className="container--app" sx={{ bgcolor: '#0288d1' }} >
               <Routes>
-                  <Route exact path='/pesquisa/' element={<Dashboard />} />
-                  <Route path='/pesquisa/Pesquisa' element={<Pesquisa />} />
+                  <Route exact path='/' element={<Dashboard />} />
+                  <Route path='/Pesquisa' element={<Pesquisa />} />
               </Routes>
               </Box>            
             </Container>           

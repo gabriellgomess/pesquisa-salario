@@ -92,12 +92,12 @@ const MenuBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >   
-                <Link to="/pesquisa/" style={{ textDecoration: 'none' }}>         
+                <Link to="/" style={{ textDecoration: 'none' }}>         
                     <MenuItem onClick={handleCloseNavMenu}>
                         <Typography sx={{color:'white'}} textAlign="center">Dashboard</Typography>
                     </MenuItem>
                 </Link>
-                <Link to="/pesquisa/Pesquisa" style={{ textDecoration: 'none' }}>
+                <Link to="/Pesquisa" style={{ textDecoration: 'none' }}>
                     <MenuItem onClick={handleCloseNavMenu}>
                         <Typography  sx={{color:'white'}} textAlign="center">Pesquisa</Typography>
                     </MenuItem>
@@ -124,12 +124,12 @@ const MenuBar = () => {
             GABRIEL.DEV
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}> 
-               <Link to="/pesquisa/" style={{ textDecoration: 'none' }}>
+               <Link to="/" style={{ textDecoration: 'none' }}>
                <Tooltip title="Nossos números">    
               <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Dashboard</Button>
               </Tooltip>
                 </Link>
-                <Link to="/pesquisa/Pesquisa" style={{ textDecoration: 'none' }}>
+                <Link to="/Pesquisa" style={{ textDecoration: 'none' }}>
                 <Tooltip title="Formulário de pesquisa">
                   <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Pesquisa</Button>
                 </Tooltip>                
