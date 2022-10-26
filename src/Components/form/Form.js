@@ -86,6 +86,7 @@ const Form = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
+                    onClose: () => { window.location.reload(); }
                     });
             }else{
                 toast.error('Ops! Algo deu errado!', {
@@ -97,6 +98,7 @@ const Form = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
+                    onClose: () => { window.location.reload(); }
                     });
             }
             
@@ -198,7 +200,7 @@ const Form = () => {
                             name="framework"                            
                             options={framework}
                             sx={{ width: 300 }}
-                            renderInput={(params) => <TextField  required {...register('framework')} {...params} label="Framework/Biblioteca principal" />}
+                            renderInput={(params) => <TextField  {...register('framework')} {...params} label="Framework/Biblioteca principal" />}
                         />
                     </FormControl>
                     <Divider className='divider' />

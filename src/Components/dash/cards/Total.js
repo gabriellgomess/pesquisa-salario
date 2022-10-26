@@ -8,7 +8,11 @@ import axios from 'axios';
 const Total = () => {
     const [total, setTotal] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=2`)
+        const token = "123456789";
+        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=2`, {
+            headers: {
+                'Authorization': `Basic ${token}`
+                }})
         .then(res => {       
             setTotal(res.data);
         })
