@@ -38,7 +38,7 @@ const CardPieApex = (props) => {
     const manipulador = props.tipo === 'idade' ? total : data;
 
     const series = manipulador?.map((item) => {
-       return props.tipo === 'idade'? parseInt(item.qtd) : item.value; ;        
+       return props.tipo === 'idade'? parseInt(item.qtd) : item.value;        
     });    
     const labels = manipulador?.map((item) => {
         return props.tipo === 'idade' ? item.idade : item.name;
