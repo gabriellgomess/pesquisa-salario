@@ -18,7 +18,12 @@
     width: 800px !important;
     height: fit-content;
 }
-
+.divider{
+    margin: 5px 0 !important;
+}
+.title{
+    font-size: 18px !important;
+}
 @media only screen and (max-width: 770px){
     .card{
         padding: 20px;

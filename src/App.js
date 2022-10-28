@@ -9,6 +9,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Routes, Route } from 'react-router-dom';
 import MenuBar from "./Components/menubar/MenuBar";
 import MyContext from './contexts/myContext';
+import WhatsAppButton from "./Components/WhatsAppButton/WhatsAppButton";
 
 const App = () => {
   const [testeState, setTesteState] = React.useState('');
@@ -32,7 +33,8 @@ const App = () => {
               </Routes>
               </Box>            
             </Container>           
-        </ThemeProvider>        
+        </ThemeProvider>
+        <WhatsAppButton />
       </MyContext.Provider>
     );
 }
