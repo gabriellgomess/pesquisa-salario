@@ -10,8 +10,9 @@
 
 .container--genre{
     display: flex;
+    flex-direction: column;
     margin-top: 25px;
-    justify-content: space-between;
+    justify-content: center;
     width: 100% !important;
 }
 
@@ -32,8 +33,17 @@
     margin: 0 !important;
 }
 .card--genre{
-    width: 250px !important;
+    width: 100% !important;
     margin: 5px 5px 0 0;
+}
+.card--senioridade{
+    width: 100% !important;
+    margin: 5px 5px 0 0;
+}
+.container--senioridade--currency,
+.container--genre--currency{
+    display: flex;
+    width: 100%;
 }
 @media only screen and (max-width: 900px){
     .container--genre{
@@ -61,6 +71,10 @@
         width: 100% !important;
         margin: 5px 5px 5px 0;
     }
-    
+    .container--senioridade--currency,
+    .container--genre--currency{
+        display: flex;
+        flex-direction: column;
+    } 
 
 }

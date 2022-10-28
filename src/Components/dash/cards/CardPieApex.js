@@ -88,12 +88,25 @@ const CardPieApex = (props) => {
             }
         }]
     }
-
+    const title = () => {
+        switch (props.tipo) {
+            case 'genero':
+                return 'Gênero';
+            case 'orientacao':
+                return 'Orientação Sexual';
+            case 'pais':
+                return 'País';
+            case 'estado':
+                return 'Estado (Brasil)';
+            default:
+                return 'Idade';
+        }
+    }
     
       return (
         <Card className='container--pie'>
         <Typography sx={{margin: 1}} variant="overline" component="div">
-            {props.tipo}
+            {title()}
         </Typography>
         <CardContent>
             {series?.length > 0 ? 

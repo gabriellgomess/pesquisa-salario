@@ -16,6 +16,8 @@ import Code from '@mui/icons-material/Code';
 import { Link } from 'react-router-dom';
 import MyContext from '../../contexts/myContext';
 import Contador from '../dash/cards/Contador';
+import Logo from '../../img/Logo.png';
+import './MenuBar.css';
 
 // const pages = ['Home', 'Pessoas', 'Mensagens'];
 const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
@@ -45,7 +47,9 @@ const MenuBar = () => {
     <AppBar component='nav'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Code sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} >
+            <img className='imagem_logo' src={Logo} alt="Logo" />
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -103,8 +107,10 @@ const MenuBar = () => {
                     </MenuItem>
                 </Link>               
             </Menu>
+          </Box>          
+          <Box  sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} >
+            <img className='imagem_logo' src={Logo} alt="Logo" />
           </Box>
-          <Code sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap

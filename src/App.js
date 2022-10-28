@@ -32,7 +32,7 @@ const App = () => {
               </Routes>
               </Box>            
             </Container>           
-        </ThemeProvider>
+        </ThemeProvider>        
       </MyContext.Provider>
     );
 }

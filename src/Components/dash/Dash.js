@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Total from './cards/Total';
 import CardGenre from './cards/CardGenre';
+import CardSenioridade from './cards/CardSenioridade';
 import CardPieApex from './cards/CardPieApex';
 import GraficoApex from './cards/ChartApex';
 import './Dash.css';
@@ -66,9 +67,10 @@ const Dash = () => {
         </Box>       
         <Box className="container--cards">
           <CardPieApex p='4' tipo='genero' />
-          <CardPieApex p='7' tipo='pais' />
-          <CardPieApex p='8' tipo='estado' />
+          <CardPieApex p='13' tipo='orientacao' />
           <CardPieApex p='5' tipo='idade' />
+          <CardPieApex p='7' tipo='pais' />
+          <CardPieApex p='8' tipo='estado' />          
         </Box>        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
@@ -84,9 +86,17 @@ const Dash = () => {
       <Typography variant="h3" gutterBottom>Remuneração</Typography>
         <Total />
         <div className='container--genre'>
-            <CardGenre tipo = 'Masculino' />
-            <CardGenre tipo = 'Feminino' />
-            <CardGenre tipo = 'Nao Binario' />            
+            <Box className="container--genre--currency">
+              <CardGenre tipo = 'Masculino' />
+              <CardGenre tipo = 'Feminino' />
+              <CardGenre tipo = 'Nao Binario' />
+            </Box>
+            <Box className="container--senioridade--currency">
+              <CardSenioridade tipo='Estagio' />
+              <CardSenioridade tipo='Junior' />    
+              <CardSenioridade tipo='Pleno' />
+              <CardSenioridade tipo='Senior' />
+            </Box>      
         </div>
       </TabPanel>      
     </Box>

@@ -9,23 +9,23 @@
     },
     {
         "id": "3",
-        "label": "Vue"
+        "label": "React Native"
     },
     {
         "id": "4",
-        "label": "jQuery"
+        "label": "Vue"
     },
     {
         "id": "5",
-        "label": "Ember"
+        "label": "Flutter"
     },
     {
         "id": "6",
-        "label": "Express"
+        "label": "Ionic"
     },
     {
         "id": "7",
-        "label": "Adonis"
+        "label": "Xamarin"
     },
     {
         "id": "8",
@@ -63,12 +63,28 @@
         "id": "16",
         "label": "RubyOnRails"
     },
-    {
+    { 
         "id": "17",
-        "label": "Nenhum"
+        "label": "jQuery"
     },
     {
         "id": "18",
+        "label": "Ember"
+    },
+    {
+        "id": "19",
+        "label": "Express"
+    },
+    {
+        "id": "20",
+        "label": "Adonis"
+    },
+    {
+        "id": "21",
         "label": "Outro"
+    },
+    {
+        "id": "22",
+        "label": "Nenhum"
     }
 ]

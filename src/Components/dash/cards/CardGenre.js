@@ -43,9 +43,9 @@ const CardGenre = (props) => {
                 
                 </Grid>
                 <Grid item>
-                <Avatar sx={{backgroundColor: 'success.main', height: 36, width: 36}}>
+                {/* <Avatar sx={{backgroundColor: 'success.main', height: 36, width: 36}}>
                     <AttachMoneyIcon />
-                </Avatar>
+                </Avatar> */}
                 </Grid>
             </Grid>           
             </CardContent>
