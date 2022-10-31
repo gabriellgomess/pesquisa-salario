@@ -3,16 +3,14 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import collect from 'collect.js';
 
 
 const CardGenre = (props) => {
     const [total, setTotal] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=3&tipo=${props.tipo}`)
-        .then(res => {       
-            setTotal(res.data);
-        })
-    }, [total]);
+        setTotal(props.data);
+    });
     const colors = () => {
         if(props.tipo === 'Masculino'){
             return '#42a5f5';
@@ -31,7 +29,19 @@ const CardGenre = (props) => {
             return 'Não Binário';
         }
     }
-   
+    
+    const mediaFiltered = total.filter((value) => {
+        return value.genero === props.tipo;
+    });
+    const parseNumber = mediaFiltered.map((item, key) => {
+        let salario = (item.salario).split("R$");
+        let salarioNum = salario[1].replace(".", "");
+        return parseFloat(salarioNum.replace(",", "."));
+    });
+    const media = collect(parseNumber).avg();
+    
+    const mediaGenero = media.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
     return (
         <Card className="card--genre" sx={{backgroundColor: '#2c2c2c'}} >
              <CardActionArea>
@@ -39,13 +49,10 @@ const CardGenre = (props) => {
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
                 <Grid item>
                 <Typography color={colors()} gutterBottom variant="overline" >MÉDIA {tipo()}</Typography>
-                <Typography color="textPrimary" variant="h6">{total}</Typography>
+                <Typography color="textPrimary" variant="h6">{mediaGenero}</Typography>
                 
                 </Grid>
                 <Grid item>
-                {/* <Avatar sx={{backgroundColor: 'success.main', height: 36, width: 36}}>
-                    <AttachMoneyIcon />
-                </Avatar> */}
                 </Grid>
             </Grid>           
             </CardContent>

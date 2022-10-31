@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -50,6 +51,18 @@ const Dash = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+const [dataFull, setDataFull] = useState([]);
+
+useEffect(() => {
+  axios.get('https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=15')
+  .then((response) => {
+    setDataFull(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}, []);
+ 
 
   return (
     <Box className="container--dash">
@@ -66,36 +79,36 @@ const Dash = () => {
           <Typography variant="overline" gutterBottom>Quem são e onde estão</Typography>
         </Box>       
         <Box className="container--cards">
-          <CardPieApex p='4' tipo='genero' />
-          <CardPieApex p='13' tipo='orientacao' />
-          <CardPieApex p='5' tipo='idade' />
-          <CardPieApex p='7' tipo='pais' />
-          <CardPieApex p='8' tipo='estado' />          
+           <CardPieApex data={dataFull} p='4' tipo='genero' />
+          <CardPieApex data={dataFull} p='13' tipo='orientacao' />
+          <CardPieApex data={dataFull} p='5' tipo='idade' />
+          <CardPieApex data={dataFull} p='7' tipo='pais' />
+          <CardPieApex data={dataFull} p='8' tipo='estado' />          
         </Box>        
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={1}>
         <Typography variant="h3" gutterBottom>Stacks</Typography>
         <Box className="container--charts">
-          <GraficoApex p='9' tipo='linguagem' />
-          <GraficoApex p='10' tipo='framework' />
-          <GraficoApex p='6' tipo='stack' />
-          <GraficoApex p='12' tipo='senioridade' />
+          <GraficoApex data={dataFull} p='9' tipo='linguagem' />
+          <GraficoApex data={dataFull} p='10' tipo='framework' />
+          <GraficoApex data={dataFull} p='6' tipo='stack' />
+          <GraficoApex data={dataFull} p='12' tipo='senioridade' />
         </Box>
       </TabPanel>
       <TabPanel className='tabPanel' value={value} index={2}>
       <Typography variant="h3" gutterBottom>Remuneração</Typography>
-        <Total />
+        <Total data={dataFull} />
         <div className='container--genre'>
             <Box className="container--genre--currency">
-              <CardGenre tipo = 'Masculino' />
-              <CardGenre tipo = 'Feminino' />
-              <CardGenre tipo = 'Nao Binario' />
+              <CardGenre data={dataFull} tipo='Masculino' />
+              <CardGenre data={dataFull} tipo='Feminino' />
+              <CardGenre data={dataFull} tipo='Nao Binario' />
             </Box>
             <Box className="container--senioridade--currency">
-              <CardSenioridade tipo='Estagio' />
-              <CardSenioridade tipo='Junior' />    
-              <CardSenioridade tipo='Pleno' />
-              <CardSenioridade tipo='Senior' />
+              <CardSenioridade data={dataFull} tipo='Estagio' />
+              <CardSenioridade data={dataFull} tipo='Junior' />    
+              <CardSenioridade data={dataFull} tipo='Pleno' />
+              <CardSenioridade data={dataFull} tipo='Senior' />
             </Box>      
         </div>
       </TabPanel>      

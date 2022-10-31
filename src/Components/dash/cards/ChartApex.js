@@ -11,11 +11,8 @@ import Chart from 'react-apexcharts'
 const GraficoApex = (props) => {
     const [totalTech, setTotalTech] = useState([]);
     useEffect(() => {
-        axios.get(`https://gabriellgomess.com/pesquisa/api/cadastrar.php?p=${props.p}`)
-        .then(res => {       
-            setTotalTech(res.data);            
-        })
-    }, [totalTech]);
+        setTotalTech(props.data);
+    });
 
     const countLang = collect(totalTech).groupBy(props.tipo).map((value, key) => {
         return {
