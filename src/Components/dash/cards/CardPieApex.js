@@ -108,7 +108,7 @@ const CardPieApex = (props) => {
                 {title()}
             </Typography>
             <CardContent>
-            {props.data.length > 0 ?
+            {props.data !== null ?
             <Chart 
                 type="pie"
                 width={350}
@@ -125,7 +125,7 @@ const CardPieApex = (props) => {
     // Caso props.tipo for igual a 'idade'
     }else{
         // Definindo as faixas etárias
-            const countAge = (total) => total.map((item) => {
+            const countAge = (total) => total?.map((item) => {
                 if(item.idade <= 20){
                     return {
                         name: 'até 20',
@@ -227,7 +227,7 @@ const CardPieApex = (props) => {
                     {title}
                 </Typography>
                 <CardContent>
-                {props.data.length > 0 ?
+                {props.data !== null ?
                 <Chart 
                     type="pie"
                     width={350}

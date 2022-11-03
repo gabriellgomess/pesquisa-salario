@@ -30,17 +30,23 @@ const CardGenre = (props) => {
         }
     }
     
-    const mediaFiltered = total.filter((value) => {
+    const mediaFiltered = total?.filter((value) => {
         return value.genero === props.tipo;
     });
-    const parseNumber = mediaFiltered.map((item, key) => {
+    const parseNumber = mediaFiltered?.map((item, key) => {
         let salario = (item.salario).split("R$");
         let salarioNum = salario[1].replace(".", "");
         return parseFloat(salarioNum.replace(",", "."));
     });
-    const media = collect(parseNumber).avg();
+    const media = () => {
+        if(isNaN(collect(parseNumber).avg())){
+            return 0;
+        }else{
+            return collect(parseNumber).avg();
+        }
+    }
     
-    const mediaGenero = media.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const mediaGenero = media().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     return (
         <Card className="card--genre" sx={{backgroundColor: '#2c2c2c'}} >
@@ -49,8 +55,7 @@ const CardGenre = (props) => {
             <Grid container spacing={3} sx={{ justifyContent: 'space-between' }}>
                 <Grid item>
                 <Typography color={colors()} gutterBottom variant="overline" >MÉDIA {tipo()}</Typography>
-                <Typography color="textPrimary" variant="h6">{mediaGenero}</Typography>
-                
+                <Typography color="textPrimary" variant="h6">{mediaGenero}</Typography>                
                 </Grid>
                 <Grid item>
                 </Grid>

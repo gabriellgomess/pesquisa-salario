@@ -11,7 +11,7 @@ const Total = (props) => {
         setTotal(props.data);
     });
     
-    const parseNumber = total.map((item, key) => {
+    const parseNumber = total?.map((item, key) => {
         let salario = (item.salario).split("R$");
         let salarioNum = salario[1].replace(".", "");
         return parseFloat(salarioNum.replace(",", "."));

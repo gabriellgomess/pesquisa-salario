@@ -41,9 +41,15 @@ const CardSenioridade = (props) => {
         let salarioNum = salario[1].replace(".", "");
         return parseFloat(salarioNum.replace(",", "."));
     });
-    const media = collect(parseNumber).avg();
+    const media = () => {
+        if(isNaN(collect(parseNumber).avg())){
+            return 0;
+        }else{
+            return collect(parseNumber).avg();
+        }
+    }
     
-    const mediaSenioridade = media.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const mediaSenioridade = media().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
    
     return (
         <Card className="card--senioridade" sx={{backgroundColor: '#2c2c2c'}} >
