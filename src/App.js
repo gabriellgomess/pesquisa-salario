@@ -29,7 +29,7 @@ const App = () => {
               <Box className="container--app" sx={{ bgcolor: '#0288d1' }} >
               <Routes>
                   <Route exact path='/' element={<Dashboard />} />
-                  <Route path='/Pesquisa' element={<Pesquisa />} />
+                  <Route path='/pesquisa' element={<Pesquisa />} />
               </Routes>
               </Box>            
             </Container>           

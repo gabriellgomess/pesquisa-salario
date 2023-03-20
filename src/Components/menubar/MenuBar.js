@@ -101,7 +101,7 @@ const MenuBar = () => {
                         <Typography sx={{color:'white'}} textAlign="center">Dashboard</Typography>
                     </MenuItem>
                 </Link>
-                <Link to="/Pesquisa" style={{ textDecoration: 'none' }}>
+                <Link to="/pesquisa" style={{ textDecoration: 'none' }}>
                     <MenuItem onClick={handleCloseNavMenu}>
                         <Typography  sx={{color:'white'}} textAlign="center">Pesquisa</Typography>
                     </MenuItem>
@@ -135,7 +135,7 @@ const MenuBar = () => {
               <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Dashboard</Button>
               </Tooltip>
                 </Link>
-                <Link to="/Pesquisa" style={{ textDecoration: 'none' }}>
+                <Link to="/pesquisa" style={{ textDecoration: 'none' }}>
                 <Tooltip title="Formulário de pesquisa">
                   <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Pesquisa</Button>
                 </Tooltip>                
